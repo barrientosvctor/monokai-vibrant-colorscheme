@@ -1,0 +1,438 @@
+{
+	"name": "Monokai Vibrant",
+	"author": "uShawnTS",
+	"variables": {
+		// base0-81 = Color scheme's hex colors (no syntax highlighting colors) | base00 = Sublime Text Theme's hex colors 
+		"base0": "#16171D",
+		"base00": "#20222a",
+		"base1": "#ffffff",
+		"base2": "#C6C6C6",
+		"base3": "#495162",
+		"base4": "#454650",
+		"base5": "#42557B",
+		"base6": "#007DD8",
+		"base7": "#484a50", // Whitespaces (invisibles) color
+		"base8": "#3E4451", // Cursor selection
+		"base81": "#858b98", // -- Cursor selection border
+
+		// Syntax highlighting colors
+		"grey": "#5c6370",
+		"lightgrey": "#919191",
+		"pink": "#E373CE",
+		"lightblue": "#19D1E5",
+		"midblue": "#00A0E4",
+		"cyan": "#6AEBF7",
+		"green": "#81F904",
+		"lightgreen": "#7fd962",
+		"orange": "#FF9700",
+		"lightorange": "#e6b673",
+		"yellow": "#FFD945",
+		"red": "#FF3F4F",
+		"lightred": "#f07178"
+	},
+	"globals": {
+		"background": "var(base0)",
+		"foreground": "var(base1)", // Every character that are not highlighted
+
+		"caret": "var(base1)", // Cursor line
+		"block_caret": "var(base1)", // Cursor block line
+		"invisibles": "var(base7)", // Whitespaces
+
+		"find_highlight": "var(base5)", // Text border color when you're searching a word
+		"find_highlight_foreground": "var(base2)", // Text foreground color when you're searching a word
+
+		"accent": "var(base6)", // Accent color for icons
+
+		"line_highlight": "var(base0)", // Active line background
+		"gutter": "var(base0)", // The color of every line no active
+		"gutter_foreground": "var(base3)", // The foreground color of every gutter number no active
+		"gutter_foreground_highlight": "var(base2)", // The foreground color of gutter active
+
+		"selection": "var(base8)", // Cursor line selection
+		"selection_border": "var(base81)", // Cursor line selection border
+		"inactive_selection_border": "var(base81)", // Inactive cursor line selection border
+
+		"brackets_options": "squiggly_underline", // Style for bracket pairs
+		"brackets_foreground": "var(base6)", // Foreground color in bracket pairs
+		"bracket_contents_options": "squiggly_underline",
+		"bracket_contents_foreground": "var(base6)",
+		"tags_options": "stippled_underline",
+		"tags_foreground": "var(base6)",
+
+		"shadow": "color(var(base4) blend(#000000 75%))",
+		"shadow_width": "6",
+
+		// Line diff
+		"line_diff_added": "var(green)",
+		"line_diff_modified": "var(yellow)",
+		"line_diff_deleted": "var(red)"
+	},
+	"rules": [
+		{
+			"name": "Meta toc list",
+			"scope": "meta.toc-list",
+			"foreground": "var(base6)",
+			"font_style": "italic"
+		},
+
+		// Comments
+		{
+			"name": "Comment",
+			"scope": "comment",
+			"foreground": "var(grey)",
+			"font_style": "italic"
+		},
+
+		// Booleans / null values
+		{
+			"name": "Character escape",
+			"scope": "constant.character.escape",
+			"foreground": "var(pink)"
+		},
+
+		// Numbers
+		{
+			"name": "Number",
+			"scope": "constant.numeric",
+			"foreground": "var(pink)"
+		},
+
+		// Numbers > Integer
+		{
+			"name": "Integer",
+			"scope": "constant.numeric.integer, constant.numeric.integer.binary, constant.numeric.integer.octal, constant.numeric.integer.decimal, constant.numeric.integer.hexadecimal, constant.numeric.integer.other",
+			"foreground": "var(pink)"
+		},
+
+		// Numbers > Float
+		{
+			"name": "Float",
+			"scope": "constant.numeric.float, constant.numeric.float.binary, constant.numeric.float.octal, constant.numeric.float.decimal, constant.numeric.float.hexadecimal, constant.numeric.float.other",
+			"foreground": "var(pink)"
+		},
+
+		// Numbers > Complex
+		{
+			"name": "Number complex",
+			"scope": "constant.numeric.complex, constant.numeric.complex.real, constant.numeric.complex.imaginary",
+			"foreground": "var(pink)"
+		},
+		
+		// Booleans / Null values
+		{
+			"name": "Boolean / Null values",
+			"scope": "constant.language",
+			"foreground": "var(pink)"
+		},
+
+		// Functions
+		{
+			"name": "Function name",
+			"scope": "entity.name.function",
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Function constructor",
+			"scope": "entity.name.constructor",
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Function parameters",
+			"scope": "meta.function.parameters, variable.parameter, meta.parameter",
+			"foreground": "var(orange)"
+		},
+		{
+			"name": "Function call",
+			"scope": "variable.function, variable.annotation, meta.function-call.generic, support.function.go",
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Library function",
+			"scope": "support.function, support.macro",
+			"foreground": "var(green)"
+		},
+
+		// Constant
+		{
+			"name": "Library constant",
+			"scope": "support.constant",
+			"foreground": "var(lightblue)"
+		},
+
+		// Classes
+		{
+			"name": "Class name",
+			"scope": "entity.name, source.js meta.function-call.constructor variable.type",
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Inherited class type",
+			"scope": "entity.other.inherited-class",
+			"foreground": "var(green)"
+		},
+
+		// Groups
+		{
+			"name": "Meta groups",
+			"scope": "meta.group",
+			"foreground": "var(base1)"
+		},
+		{
+			"name": "Punctuation group begin/end",
+			"scope": "punctuation.section.group.begin, punctuation.section.group.end",
+			"foreground": "var(base1)"
+		},
+
+		// Punctuation
+		{
+			"name": "Punctuation",
+			"scope": "punctuation.section",
+			"foreground": "var(base1)"
+		},
+
+		// Separators
+		{
+			"name": "Separators like ; or ,",
+			"scope": "punctuation.separator, punctuation.terminator",
+			"foreground": "var(base1)"
+		},
+
+		// Parens
+		{
+			"name": "Meta parens",
+			"scope": "meta.parens",
+			"foreground": "var(base1)"
+		},
+		{
+			"name": "Punctuation parens begin/end",
+			"scope": "punctuation.section.parens.begin, punctuation.section.parens.end",
+			"foreground": "var(base1)"
+		},
+
+		// Strings
+		{
+			"name": "String",
+			"scope": "string - meta.template, constant.other.symbol, string.quoted",
+			"foreground": "var(yellow)"
+		},
+
+		// Operators
+		{
+			"name": "Operator",
+			"scope": "keyword.operator",
+			"foreground": "var(red)"
+		},
+
+		// Variables
+		{
+			"name": "Variable",
+			"scope": "variable.member",
+			"foreground": "var(base1)"
+		},
+
+		{
+			"name": "Language variable",
+			"scope": "variable.language",
+			"font_style": "italic",
+			"foreground": "var(red)"
+		},
+
+		// Storage / Keyword
+		{
+			"name": "Storage",
+			"scope": "storage, storage.type.keyword",
+			"font_style": "italic",
+			"foreground": "var(red)"
+		},
+
+		{
+			"name": "Keyword",
+			"scope": "keyword",
+			"font_style": "italic",
+			"foreground": "var(red)"
+		},
+
+		// Accessor
+		{
+			"name": "Accessor",
+			"scope": "punctuation.accessor",
+			"foreground": "var(base1)"
+		},
+
+		// Arrow
+		{
+			"name": "Lamda Arrow",
+			"scope": "storage.type.function",
+			"foreground": "var(lightblue)"
+		},
+
+		// Invalid
+		{
+			"name": "Invalid",
+			"scope": "invalid",
+			"foreground": "var(red)"
+		},
+
+		// Color message error
+		{
+			"scope": "message.error",
+			"foreground": "var(red)"
+		},
+
+		// JS/TS
+		// JS/TS > interpolation punctuation
+		{
+			"name": "JS/TS interpolation punctuation",
+			"scope": "punctuation.definition.template-expression",
+			"foreground": "var(red)"
+		},
+
+		{
+			"name": "Imports and packages",
+			"scope": "entity.name.import, entity.name.package",
+			"foreground": "var(yellow)"
+		},
+
+		// HTML
+		// HTML > Tag
+		{
+			"name": "HTML Tag",
+			"scope": "entity.name.tag, meta.tag.sgml",
+			"foreground": "var(red)"
+		},
+
+		// HTML > Tag start/end
+		{
+			"name": "HTML Tag start/end",
+			"scope": "punctuation.definition.tag.end, punctuation.definition.tag.begin, punctuation.definition.tag",
+			"foreground": "var(base1)"
+		},
+
+		// HTML > Attributes
+		{
+			"name": "HTML Attributes",
+			"scope": "entity.other.attribute-name",
+			"foreground": "var(green)"
+		},
+
+		// CSS
+		// CSS > Tag names
+		{
+			"name": "CSS Tag names",
+			"scope": "source.css entity.name.tag, source.sass entity.name.tag, source.scss entity.name.tag, source.less entity.name.tag, source.stylus entity.name.tag",
+			"foreground": "var(red)"
+		},
+
+		// CSS > browser prefix
+		{
+			"name": "CSS browser prefix",
+			"scope": "source.css support.type, source.sass support.type, source.scss support.type, source.less support.type, source.stylus support.type",
+			"foreground": "var(cyan)"
+		},
+
+		// CSS > properties
+		{
+			"name": "CSS properties",
+			"scope": "support.type.property-name",
+			"foreground": "var(cyan)"
+		},
+
+		// Java
+		// Java > keywords
+		{
+			"name": "Java keywords fixes",
+			"scope": "source.java meta.class.java meta.class.identifier.java storage.type.java",
+			"font_style": "italic",
+			"foreground": "var(red)"
+		},
+
+		// Ruby
+		// Ruby > interpolation punctuation
+		{
+			"name": "Ruby interpolation punctuation",
+			"scope": "punctuation.section.interpolation",
+			"foreground": "var(red)"
+		},
+
+		// Ruby > class methods
+		{
+			"name": "Ruby class methods",
+			"scope": "source.ruby variable.other.readwrite",
+			"foreground": "var(green)"
+		},
+
+		// Markdown
+		{
+			"name": "Markup Bold",
+			"scope": "markup.bold",
+			"font_style": "bold",
+			"foreground": "var(lightred)"
+		},
+		{
+			"name": "Markup Italic",
+			"scope": "markup.italic",
+			"font_style": "italic",
+			"foreground": "var(lightgrey)"
+		},
+		{
+			"name": "Markup links",
+			"scope": "markup.underline.link, string.other.link",
+			"font_style": "underline",
+			"foreground": "var(midblue)"
+		},
+		{
+			"name": "Markup Bold/italic",
+			"scope": "markup.italic markup.bold, markup.bold markup.italic",
+			"font_style": "bold italic"
+		},
+		{
+			"name": "Markup Code",
+			"scope": "markup.raw",
+			"background": "var(base00)"
+		},
+		{
+			"name": "Markup Code Inline",
+			"scope": "markup.raw.inline",
+			"background": "var(base00)"
+		},
+		{
+			"name": "Markdown Separator",
+			"scope": "meta.separator",
+			"font_style": "bold",
+			"background": "var(base00)",
+			"foreground": "var(grey)"
+		},
+		{
+			"name": "Markup Blockquote",
+			"scope": "markup.quote",
+			"foreground": "var(green)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Markup added",
+			"scope": "markup.inserted",
+			"foreground": "var(lightgreen)"
+		},
+		{
+			"name": "Markup modified",
+			"scope": "markup.changed",
+			"foreground": "var(base6)"
+		},
+		{
+			"name": "Markup removed",
+			"scope": "markup.deleted",
+			"foreground": "var(lightred)"
+		},
+		{
+			"name": "Markup Strike",
+			"scope": "markup.strike",
+			"foreground": "var(lightorange)"
+		},
+		{
+			"name": "Markup Table",
+			"scope": "markup.table",
+			"background": "var(base00)",
+			"foreground": "var(base1)"
+		}
+	]
+}
